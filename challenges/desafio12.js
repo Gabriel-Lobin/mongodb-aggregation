@@ -27,5 +27,5 @@ db.trips.aggregate([
   },
   {
     $limit: 1,
-  }, 
+  },
 ]);
