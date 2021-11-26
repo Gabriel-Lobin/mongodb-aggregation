@@ -16,11 +16,11 @@ db.trips.aggregate([
       diaDaSemana: "$_id",
       total: "$soma",
     },
-  }, 
+  },
   {
     $sort: { total: -1 },
   },
   {
     $limit: 1,
-  },  
+  },
 ]);
