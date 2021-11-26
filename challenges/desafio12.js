@@ -6,7 +6,7 @@ db.trips.aggregate([
   },
   {
     $match: {
-      diaDaSemana: 5,   
+      diaDaSemana: 5,
     },
   },
   {
@@ -21,11 +21,11 @@ db.trips.aggregate([
       nomeEstacao: "$_id",
       total: "$soma",
     },
-  }, 
+  },
   {
     $sort: { total: -1 },
   },
   {
     $limit: 1,
-  },  
+  }, 
 ]);
