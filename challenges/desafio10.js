@@ -4,23 +4,23 @@ db.trips.aggregate([
       usertype: 1,
       sub: {
         $subtract: ["$stopTime", "$startTime"],
-      }
-    }
+      },
+    },
   },
   {
     $project: {
       usertype: 1,
       media: {
-        $divide: ["$sub",  3600000 ],
-      }
-    }
+        $divide: ["$sub", 3600000],
+      },
+    },
   },
   {
     $group: {
       _id: "$usertype",
       duracaoMedia: { $avg: "$media" },
     },
-  },  
+  },
   {
     $project: {
       _id: 0,
