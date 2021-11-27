@@ -40,5 +40,5 @@ db.trips.aggregate([
       _id: 0,
       duracaoMediaEmMinutos: { $ceil: ["$duracaoMedia"] },
     },
-  },  
+  },
 ]);
