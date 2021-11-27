@@ -25,7 +25,7 @@ db.trips.aggregate([
     $project: {
       usertype: 1,
       media: {
-        $divide: ["$sub",  60000],
+        $divide: ["$sub", 60000],
       },
     },
   },
@@ -34,14 +34,11 @@ db.trips.aggregate([
       _id: "$verifiedDate",
       duracaoMedia: { $avg: "$media" },
     },
-  },  
+  },
   {
     $project: {
-      _id: 0,      
+      _id: 0,
       duracaoMediaEmMinutos: { $ceil: ["$duracaoMedia"] },
     },
-  },
-  {
-    $sort: { duracaoMedia: 1 },
-  },
+  },  
 ]);
