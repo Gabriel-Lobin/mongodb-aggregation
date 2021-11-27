@@ -11,7 +11,7 @@ db.trips.aggregate([
     $project: {
       bikeid: 1,
       media: {
-        $divide: ["$sub", 60000 ],
+        $divide: ["$sub", 60000],
       },
     },
   },
